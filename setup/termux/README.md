@@ -8,20 +8,13 @@ pkg upgrade -y -o Dpkg::Options::="--force-confnew"
 pkg install proot-distro
 proot-distro install ubuntu
 proot-distro login ubuntu
-
-(in ubuntu)
-useradd -U -m -s /bin/bash daniel 
-passwd daniel
-exit
-
-(in termux)
-proot-distro login --user daniel ubuntu
 ```
+
 ## Install programs and config files in Ubuntu
 
-Run configuration script:
 ```bash
-(in ubuntu)
+(in ubuntu as root)
+apt update
 apt install -y git
 git clone https://github.com/danielgimenes/dotfiles
 cd dotfiles/setup/termux/
