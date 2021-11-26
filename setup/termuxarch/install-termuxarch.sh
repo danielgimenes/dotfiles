@@ -1,14 +1,13 @@
-#!/bin/bash -x
+#!/bin/bash
 
-echo "Installing depedencies for TermuxArch..."
-pkg install proot bsdtar au
+echo "Installing depedencies..."
+pkg install -y proot bsdtar wget npm
+npm install au
 
 echo "Downloading TermuxArch setup script..."
-wget "https://sdrausty.github.io/TermuxArch/setupTermuxArch.sh"
-chmod +R setupTermuxArch.sh
+wget "https://TermuxArch.github.io/TermuxArch/setupTermuxArch.sh"
+chmod +x setupTermuxArch.sh
 
 echo "Installing TermuxArch..."
 ./setupTermuxArch.sh
 
-echo 'alias arch="startarch u '$USERNAME'"' >> .bashrc
-source .bashrc
