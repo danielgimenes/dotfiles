@@ -1,25 +1,28 @@
-# Setup TermuxArch
+# Setup Termux
 
-
-## Install TermuxArch in Termux
+## Install Ubuntu in Termux
 Download Termux from Play Store, open it and then:
 ``` 
 $ termux-change-repo # change all repos to A1batross
-$ apt upgrade -y -o Dpkg::Options::="--force-confnew"
-$ pkg install -y git wget 
-$ git clone "https://github.com/danielgimenes/dotfiles"
-$ cd dotfiles/setup/termuxarch/
-$ chmod +x install-termuxarch.sh
-$ ./install-termuxarch.sh
-```
-## Configure TermuxArch with programs and config files
+$ pkg upgrade -y -o Dpkg::Options::="--force-confnew"
+$ pkg install proot-distro
+$ proot-distro install ubuntu
+$ proot-distro login ubuntu
+# useradd -U -m -s /bin/bash daniel 
+# passwd daniel
+# exit
+$ proot-distro login --user daniel ubuntu
 
-(if not in Arch Linux)
+$ apt install -y git
+$ git clone https://github.com/danielgimenes/dotfiles
+$ cd dotfiles/setup/termux/
+$ chmod +x install.sh
+$ ./install.sh
 ```
-$ startarch
-```
+## Install programs and config files
 
-Run configuration script:
+In Ubuntu, run configuration script:
 ```
-./config-termuxarch.sh
+$ cd dotfiles/setup/termux/
+$ ./config.sh
 ```
