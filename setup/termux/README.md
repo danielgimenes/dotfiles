@@ -7,11 +7,10 @@ https://f-droid.org/en/packages/com.termux
 ## Install Ubuntu in Termux
 Download Termux from Play Store, open it and then:
 ```bash
-termux-change-repo # change all repos to A1batross
 pkg upgrade -y -o Dpkg::Options::="--force-confnew"
-pkg install proot-distro
+pkg install -y proot-distro
 proot-distro install ubuntu
-proot-distro login ubuntu
+proot-distro login ubuntu # logs in as root w/o password
 ```
 
 ## Install programs and config files in Ubuntu
@@ -24,4 +23,12 @@ git clone https://github.com/danielgimenes/dotfiles
 cd dotfiles/setup/termux/
 chmod +x setup.sh
 ./setup.sh
+```
+
+# Troubleshooting
+
+Error getting packages in repos of Termux: 
+
+```bash
+termux-change-repo # change all repos to A1batross
 ```
