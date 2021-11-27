@@ -1,5 +1,9 @@
 # Setup Termux
 
+Get termux app from `F-Droid`:
+
+https://f-droid.org/en/packages/com.termux
+
 ## Install Ubuntu in Termux
 Download Termux from Play Store, open it and then:
 ```bash
