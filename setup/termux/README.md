@@ -22,7 +22,7 @@ apt install -y git
 git clone https://github.com/danielgimenes/dotfiles
 cd dotfiles/setup/termux/
 chmod +x setup.sh
-./setup.sh
+./setup.sh # this should take 5-10 minutes
 ```
 
 # Troubleshooting
@@ -31,4 +31,5 @@ Error getting packages in repos of Termux:
 
 ```bash
 termux-change-repo # change all repos to A1batross
+pkg upgrade -y -o Dpkg::Options::="--force-confnew"
 ```
