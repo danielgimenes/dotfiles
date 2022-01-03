@@ -11,6 +11,7 @@ alias open-webcam='vlc v4l2:///dev/video2:width=1920:height=1080:chroma=MJPG'
 # env vars
 export PATH=$PATH:$HOME/dev/idea/bin
 export PATH=$PATH:$HOME/dev/lein
+export TERMUX=`pgrep --session 0 proot`
 
 # GPG
 export GPG_TTY=$(tty)
